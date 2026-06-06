@@ -1,0 +1,86 @@
+[
+{
+  "model": "webapp.guestentry",
+  "pk": 1,
+  "fields": {
+    "name": "kate",
+    "email": "katiegudkova2009@gmail.com",
+    "text": "good book",
+    "created_at": "2026-06-06T09:37:51.584Z",
+    "updated_at": "2026-06-06T09:37:51.584Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.guestentry",
+  "pk": 2,
+  "fields": {
+    "name": "tima",
+    "email": "tima09@mail.ru",
+    "text": "ok to use",
+    "created_at": "2026-06-06T09:38:19.005Z",
+    "updated_at": "2026-06-06T09:38:19.005Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.guestentry",
+  "pk": 3,
+  "fields": {
+    "name": "luaba",
+    "email": "luabastar@gmail.com",
+    "text": "not bad",
+    "created_at": "2026-06-06T09:38:42.667Z",
+    "updated_at": "2026-06-06T09:38:42.667Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.guestentry",
+  "pk": 4,
+  "fields": {
+    "name": "dima",
+    "email": "dumchev@mail.ru",
+    "text": "i dont like it",
+    "created_at": "2026-06-06T09:39:21.576Z",
+    "updated_at": "2026-06-06T09:39:21.576Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.guestentry",
+  "pk": 5,
+  "fields": {
+    "name": "diana",
+    "email": "di_sts@mail.com",
+    "text": "fine!",
+    "created_at": "2026-06-06T09:39:48.627Z",
+    "updated_at": "2026-06-06T09:39:48.627Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "webapp.guestentry",
+  "pk": 6,
+  "fields": {
+    "name": "daliil",
+    "email": "danill337@gmail.com",
+    "text": "shiittt 67",
+    "created_at": "2026-06-06T09:40:25.635Z",
+    "updated_at": "2026-06-06T09:40:25.635Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "webapp.guestentry",
+  "pk": 7,
+  "fields": {
+    "name": "milana",
+    "email": "mil28@mail.ru",
+    "text": "goood",
+    "created_at": "2026-06-06T09:40:57.847Z",
+    "updated_at": "2026-06-06T09:40:57.847Z",
+    "status": "blocked"
+  }
+}
+]
