@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from webapp.models import GuestEntry
-from webapp.forms import GuestEntryForm
-
+from webapp.forms import GuestEntryForm, SearchForm
 
 def entry_list(request):
-    entries = GuestEntry.objects.filter(status='active').order_by('-created_at')
     form = GuestEntryForm()
-    return render(request, 'webapp/entry_list.html', {'entries': entries, 'form': form})
-
+    search_form = SearchForm(request.GET)
+    entries = GuestEntry.objects.filter(status='active').order_by('-created_at')
+    if search_form.is_valid() and search_form.cleaned_data['name']:
+        entries = entries.filter(name=search_form.cleaned_data['name'])
+    return render(request, 'webapp/entry_list.html', {'entries': entries, 'form': form, 'search_form': search_form})
 
 def entry_add(request):
     if request.method == 'POST':
@@ -22,7 +23,6 @@ def entry_add(request):
         entries = GuestEntry.objects.filter(status='active').order_by('-created_at')
         return render(request, 'webapp/entry_list.html', {'entries': entries, 'form': form})
     return redirect('entry_list')
-
 
 def entry_edit(request, pk):
     entry = get_object_or_404(GuestEntry, pk=pk)
@@ -41,7 +41,6 @@ def entry_edit(request, pk):
             'text': entry.text
         })
     return render(request, 'webapp/entry_edit.html', {'form': form, 'entry': entry})
-
 
 def entry_delete(request, pk):
     entry = get_object_or_404(GuestEntry, pk=pk)
