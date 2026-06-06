@@ -1,0 +1,16 @@
+{% csrf_token %}
+<div class="mb-3">
+    <label class="form-label">Имя:</label>
+    {{ form.name.errors }}
+    <input type="text" name="name" class="form-control" value="{{ form.name.value|default:'' }}">
+</div>
+<div class="mb-3">
+    <label class="form-label">Email:</label>
+    {{ form.email.errors }}
+    <input type="email" name="email" class="form-control" value="{{ form.email.value|default:'' }}">
+</div>
+<div class="mb-3">
+    <label class="form-label">Текст:</label>
+    {{ form.text.errors }}
+    <textarea name="text" class="form-control" rows="4">{{ form.text.value|default:'' }}</textarea>
+</div>

@@ -1,0 +1,16 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+<h4 class="mb-3">Удалить запись?</h4>
+<p>Для подтверждения введите email автора записи <strong>{{ entry.name }}</strong>:</p>
+{% if error %}
+<div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+<form method="post" style="max-width: 400px;">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="email" name="email" class="form-control" placeholder="Email автора" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a href="{% url 'entry_list' %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}

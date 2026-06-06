@@ -1,0 +1,29 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+<h1 class="mb-4">Гостевая книга</h1>
+
+{% for entry in entries %}
+<div class="card mb-3 rounded-4">
+    <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">{{ entry.name }} ({{ entry.email }})</h5>
+            <div>
+                <a href="{% url 'entry_edit' entry.pk %}" class="btn btn-sm btn-outline-secondary me-1">
+                    <i class="fa fa-pen"></i>
+                </a>
+                <a href="{% url 'entry_delete' entry.pk %}" class="btn btn-sm btn-outline-danger">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </div>
+        </div>
+        <p class="card-text text-muted">{{ entry.text }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<h4 class="mt-5">Добавить новую запись</h4>
+<form method="post" action="{% url 'entry_add' %}" style="max-width: 500px;">
+    {% include 'webapp/entry_form.html' %}
+    <button type="submit" class="btn btn-primary">Добавить</button>
+</form>
+{% endblock %}

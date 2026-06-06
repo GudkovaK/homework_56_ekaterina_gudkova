@@ -1,0 +1,9 @@
+{% extends 'webapp/base.html' %}
+{% block content %}
+<h4 class="mb-3">Редактировать запись</h4>
+<form method="post" style="max-width: 500px;">
+    {% include 'webapp/entry_form.html' %}
+    <button type="submit" class="btn btn-success">Сохранить</button>
+    <a href="{% url 'entry_list' %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}
